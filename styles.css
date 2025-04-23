@@ -1,0 +1,74 @@
+:root {
+    /* colours */
+    --dark-grey: #333;
+    --grey: #a0a0a0;
+    --light-grey: #f0f0f0;
+    --white: #fdfdfd;
+    --highlight: #ffee8cc0;
+
+    /* font-sizes */
+    --font-large: 42px;
+    --font-normal: 16px;
+
+    /* border */
+    --border-width: 1px;
+    --border-line: solid;
+    --border-radius: 20px;
+
+    /* padding */
+    --padding: 8px 14px;
+
+    /* font-family */
+    --font-family: 'Courier New', Courier, monospace;
+}
+
+::selection {
+    color: var(--dark-grey);
+    background-color: var(--highlight);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-family: var(--font-family);
+    background-color: var(--light-grey);
+}
+
+h1 {
+    color: var(--dark-grey);
+    font-size: var(--font-large);
+}
+
+button {
+    cursor: pointer;
+    color: var(--grey);
+    padding: var(--padding);
+    font-size: var(--font-normal);
+    font-family: var(--font-family);
+    border-radius: var(--border-radius);
+    background-color: var(--light-grey);
+    border: var(--border-width) var(--border-line) var(--grey);
+}
+
+button:hover {
+    color: var(--dark-grey);
+    border: var(--border-width) var(--border-line) var(--dark-grey);
+}
+
+#todo-input {
+    width: 250px;
+    margin-right: 10px;
+    padding: var(--padding);
+    font-size: var(--font-normal);
+    font-family: var(--font-family);
+    border-radius: var(--border-radius);
+    border: var(--border-width) var(--border-line) var(--white);
+}
+
+#todo-input:focus {
+    outline: none;
+    border: var(--border-width) var(--border-line) var(--dark-grey);
+}
