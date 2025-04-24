@@ -21,7 +21,19 @@ request.onupgradeneeded = (event) => {
 
 document.getElementById('todo-form').onsubmit = (event) => {
     event.preventDefault();
+
     const todoInput = document.getElementById('todo-input');
-    console.log("[IndexedDB]: Form submitted successfully.")
-    todoInput.value = '';
+    const newTodo = { todo: todoInput.value };
+
+    const transaction = database.transaction([objectStoreName], 'readwrite');
+    const objectStore = transaction.objectStore(objectStoreName);
+    const request = objectStore.add(newTodo);
+
+    request.onsuccess = () => {
+        console.log(`[IndexedDB]: To-do '${newTodo.todo}' added successfully to database.`);
+        todoInput.value = '';
+    };
+    request.onerror = () => {
+        console.error("[IndexedDB]: Error adding item to database.");
+    };
 };
