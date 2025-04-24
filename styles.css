@@ -4,7 +4,11 @@
     --grey: #a0a0a0;
     --light-grey: #f0f0f0;
     --white: #fdfdfd;
+
     --highlight: #ffee8cc0;
+
+    --light-blue: #d5e3f0;
+    --red: #dd0534;
 
     /* font-sizes */
     --font-large: 42px;
@@ -17,6 +21,9 @@
 
     /* padding */
     --padding: 8px 14px;
+
+    /* box-shadow */
+    --box-shadow: 8px 8px #0000001a;
 
     /* font-family */
     --font-family: 'Courier New', Courier, monospace;
@@ -71,4 +78,53 @@ button:hover {
 #todo-input:focus {
     outline: none;
     border: var(--border-width) var(--border-line) var(--dark-grey);
+}
+
+#todo-list {
+    padding: 0;
+    width: 600px;
+    margin-top: 44px;
+}
+
+#todo-list li {
+    display: flex;
+    position: relative;
+    padding: 10px 0px 4px 98px;
+    box-shadow: var(--box-shadow);
+    background-color: var(--white);
+    border-left: var(--border-width) var(--border-line) var(--grey);
+    border-right: var(--border-width) var(--border-line) var(--grey);
+}
+
+#todo-list li::before {
+    top: 0;
+    left: 0;
+    right: 0;
+    content: '';
+    position: absolute;
+    height: var(--border-width);
+    background-color: var(--light-blue);
+}
+
+#todo-list li:first-child {
+    padding-top: 90px;
+    border-top: var(--border-width) var(--border-line) var(--grey);
+}
+
+#todo-list li:first-child::before {
+    top: 80px;
+}
+
+#todo-list li::after {
+    top: 0;
+    bottom: 0;
+    left: 80px;
+    content: '';
+    position: absolute;
+    width: var(--border-width);
+    background-color: var(--red);
+}
+
+#todo-list li:last-child {
+    border-bottom: var(--border-width) var(--border-line) var(--grey);
 }
