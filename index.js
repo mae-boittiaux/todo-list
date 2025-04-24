@@ -11,6 +11,7 @@ request.onerror = () => {
 request.onsuccess = (event) => {
     console.log("[IndexedDB]: Database connection opened successfully.");
     database = event.target.result;
+    updateTodoList();
 };
 
 request.onupgradeneeded = (event) => {
@@ -32,8 +33,32 @@ document.getElementById('todo-form').onsubmit = (event) => {
     request.onsuccess = () => {
         console.log(`[IndexedDB]: To-do '${newTodo.todo}' added successfully to database.`);
         todoInput.value = '';
+        updateTodoList();
     };
     request.onerror = () => {
         console.error("[IndexedDB]: Error adding item to database.");
     };
 };
+
+function updateTodoList() {
+    const transaction = database.transaction([objectStoreName], 'readonly');
+    const objectStore = transaction.objectStore(objectStoreName);
+    const request = objectStore.getAll();
+
+    request.onsuccess = (event) => {
+        const storedTodos = event.target.result;
+        const todoListElement = document.getElementById('todo-list');
+        todoListElement.innerHTML = '';
+
+        storedTodos.forEach(todo => {
+            const listItem = document.createElement('li');
+            listItem.textContent = todo.todo;
+            listItem.dataset.id = todo.id;
+            todoListElement.appendChild(listItem);
+        });
+        console.log("[IndexedDB]: To-do list updated successfully.");
+    };
+    request.onerror = () => {
+        console.error("[IndexedDB]: Error updating the to-do list.");
+    };
+}
