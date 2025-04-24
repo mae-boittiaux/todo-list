@@ -18,3 +18,10 @@ request.onupgradeneeded = (event) => {
     const objectStore = database.createObjectStore(objectStoreName, { keyPath: 'id', autoIncrement: true });
     objectStore.createIndex("todo", "todo", { unique: false });
 };
+
+document.getElementById('todo-form').onsubmit = (event) => {
+    event.preventDefault();
+    const todoInput = document.getElementById('todo-input');
+    console.log("[IndexedDB]: Form submitted successfully.")
+    todoInput.value = '';
+};
