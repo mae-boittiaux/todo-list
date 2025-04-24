@@ -50,12 +50,22 @@ function updateTodoList() {
         const todoListElement = document.getElementById('todo-list');
         todoListElement.innerHTML = '';
 
+        let itemCount = 0;
+
         storedTodos.forEach(todo => {
             const listItem = document.createElement('li');
             listItem.textContent = todo.todo;
             listItem.dataset.id = todo.id;
             todoListElement.appendChild(listItem);
+            itemCount++;
         });
+
+        if (itemCount > 0) {
+            const footerPadding = document.createElement('li');
+            footerPadding.textContent = "";
+            footerPadding.dataset.id = "";
+            todoListElement.appendChild(footerPadding);
+        }
         console.log("[IndexedDB]: To-do list updated successfully.");
     };
     request.onerror = () => {

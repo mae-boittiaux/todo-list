@@ -126,5 +126,6 @@ button:hover {
 }
 
 #todo-list li:last-child {
+    padding-bottom: 22px;
     border-bottom: var(--border-width) var(--border-line) var(--grey);
 }
