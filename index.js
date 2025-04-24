@@ -9,3 +9,9 @@ request.onsuccess = (event) => {
     console.log("[IndexedDB]: Database connection opened successfully.");
     database = event.target.result;
 };
+
+request.onupgradeneeded = (event) => {
+    const database = event.target.result;
+    const objectStore = database.createObjectStore("todo-store", { keyPath: 'id', autoIncrement: true });
+    objectStore.createIndex("todo", "todo", { unique: false });
+};
