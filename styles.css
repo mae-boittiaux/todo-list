@@ -9,6 +9,7 @@
 
     --light-blue: #d5e3f0;
     --red: #dd0534;
+    --dark-red: #9b1818;
 
     /* font-sizes */
     --font-large: 42px;
@@ -92,6 +93,7 @@ button:hover {
     padding: 10px 0px 4px 98px;
     box-shadow: var(--box-shadow);
     background-color: var(--white);
+    justify-content: space-between;
     border-left: var(--border-width) var(--border-line) var(--grey);
     border-right: var(--border-width) var(--border-line) var(--grey);
 }
@@ -128,4 +130,17 @@ button:hover {
 #todo-list li:last-child {
     padding-bottom: 22px;
     border-bottom: var(--border-width) var(--border-line) var(--grey);
+}
+
+.delete-button {
+    padding: 0;
+    border: none;
+    color: var(--red);
+    padding-right: 14px;
+    background-color: var(--white);
+}
+
+.delete-button:hover {
+    border: none;
+    color: var(--dark-red);
 }
