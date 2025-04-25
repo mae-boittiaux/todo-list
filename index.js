@@ -56,6 +56,8 @@ function updateTodoList() {
             const listItem = document.createElement('li');
             listItem.textContent = todo.todo;
             listItem.dataset.id = todo.id;
+
+            listItem.appendChild(addDeleteButton(todo));
             todoListElement.appendChild(listItem);
             itemCount++;
         });
@@ -70,5 +72,30 @@ function updateTodoList() {
     };
     request.onerror = () => {
         console.error("[IndexedDB]: Error updating the to-do list.");
+    };
+}
+
+function addDeleteButton(todo) {
+    const deleteButton = document.createElement('button');
+    deleteButton.textContent = 'Delete';
+    deleteButton.className = 'delete-button';
+
+    deleteButton.onclick = () => {
+        console.log(`[IndexedDB]: To-do '${todo.todo}' successfully deleted.`);
+        deleteTodo(todo.id);
+    };
+    return deleteButton;
+}
+
+function deleteTodo(id) {
+    const transaction = database.transaction([objectStoreName], 'readwrite');
+    const objectStore = transaction.objectStore(objectStoreName);
+    const request = objectStore.delete(id);
+
+    request.onsuccess = () => {
+        updateTodoList();
+    };
+    request.onerror = () => {
+        console.error('[IndexedDB]: Error deleting to-do item.');
     };
 }
