@@ -85,6 +85,7 @@ button:hover {
     padding: 0;
     width: 600px;
     margin-top: 44px;
+    margin-bottom: 152px;
 }
 
 #todo-list li {
