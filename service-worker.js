@@ -43,3 +43,21 @@ self.addEventListener('fetch', event => {
         })()
     );
 });
+
+self.addEventListener('activate', event => {
+    console.log("[Service Worker]: Activating service worker...");
+    event.waitUntil(
+        (async () => {
+            const cacheNames = await caches.keys();
+            await Promise.all(
+                cacheNames.map(cache => {
+                    if (cache !== cacheName) {
+                        console.log("[Service Worker]: Deleting old cache.");
+                        return caches.delete(cache);
+                    }
+                })
+            );
+            await self.clients.claim();
+        })()
+    );
+});
