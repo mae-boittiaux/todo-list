@@ -147,3 +147,10 @@ button:hover {
     padding-right: 14px;
     background-color: var(--white);
 }
+
+#submit-button {
+    transition:
+        color 0.2s ease-in-out,
+        border-color 0.2s ease-in-out,
+        background-color 0.2s ease-in-out;
+}
