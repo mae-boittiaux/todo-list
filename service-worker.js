@@ -23,3 +23,23 @@ self.addEventListener('install', event => {
         })()
     );
 });
+
+self.addEventListener('fetch', event => {
+    event.respondWith(
+        (async () => {
+            const cache = await caches.open(cacheName);
+            const cachedResponse = await cache.match(event.request);
+            const networkPromise = fetch(event.request)
+                .then(networkResponse => {
+                    if (networkResponse && networkResponse.status === 200) {
+                        cache.put(event.request, networkResponse.clone());
+                    }
+                    return networkResponse;
+                })
+                .catch(error => {
+                    console.log("[Service Worker]: Network request failed.");
+                });
+            return cachedResponse || networkPromise;
+        })()
+    );
+});
