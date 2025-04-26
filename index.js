@@ -99,3 +99,13 @@ function deleteTodo(id) {
         console.error('[IndexedDB]: Error deleting to-do item.');
     };
 }
+
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./service-worker.js')
+        .then(function () {
+            console.log("[Service Worker]: Registered successfully.");
+        })
+        .catch(function () {
+            console.log("[Service Worker]: Registration failed.");
+        })
+}
