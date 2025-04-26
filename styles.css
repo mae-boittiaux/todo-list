@@ -133,15 +133,17 @@ button:hover {
     border-bottom: var(--border-width) var(--border-line) var(--grey);
 }
 
+#todo-list li:hover {
+    .delete-button {
+        border: none;
+        color: var(--dark-red);
+    }
+}
+
 .delete-button {
     padding: 0;
     border: none;
-    color: var(--red);
+    color: var(--white);
     padding-right: 14px;
     background-color: var(--white);
-}
-
-.delete-button:hover {
-    border: none;
-    color: var(--dark-red);
 }
