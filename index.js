@@ -57,6 +57,7 @@ function updateTodoList() {
             listItem.textContent = todo.todo;
             listItem.dataset.id = todo.id;
 
+            listItem.prepend(addCheckbox(todo));
             listItem.appendChild(addDeleteButton(todo));
             todoListElement.appendChild(listItem);
             itemCount++;
@@ -73,6 +74,17 @@ function updateTodoList() {
     request.onerror = () => {
         console.error("[IndexedDB]: Error updating the to-do list.");
     };
+}
+
+function addCheckbox(todo) {
+    const checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
+    checkbox.className = 'checkboxButton';
+
+    checkbox.onclick = () => {
+        console.log(`[Application]: To-do '${todo.todo}' completed!`);
+    };
+    return checkbox;
 }
 
 function addDeleteButton(todo) {
