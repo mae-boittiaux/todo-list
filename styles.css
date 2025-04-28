@@ -138,6 +138,15 @@ button:hover {
         border: none;
         color: var(--dark-red);
     }
+
+    .container .checkmark:after {
+        border: solid var(--grey);
+        border-width: 0 1px 1px 0;
+    }
+
+    .checkmark {
+        border: var(--border-width) var(--border-line) var(--grey);
+    }
 }
 
 .delete-button {
@@ -177,7 +186,7 @@ button:hover {
     position: absolute;
     border-radius: 4px;
     background-color: var(--white);
-    border: var(--border-width) var(--border-line) var(--grey);
+    border: var(--border-width) var(--border-line) var(--white);
 }
 
 .checkmark:after {
@@ -192,13 +201,8 @@ button:hover {
     width: 3px;
     height: 6px;
     transform: rotate(45deg);
-    border: solid var(--grey);
+    border: solid var(--white);
     border-width: 0 1px 1px 0;
-}
-
-.container:hover input~.checkmark {
-    color: var(--dark-grey);
-    border: var(--border-width) var(--border-line) var(--dark-grey);
 }
 
 .container input:checked~.checkmark:after {
