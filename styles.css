@@ -92,9 +92,9 @@ button:hover {
     display: flex;
     position: relative;
     padding: 10px 0px 4px 98px;
+    justify-content: flex-start;
     box-shadow: var(--box-shadow);
     background-color: var(--white);
-    justify-content: space-between;
     border-left: var(--border-width) var(--border-line) var(--grey);
     border-right: var(--border-width) var(--border-line) var(--grey);
 }
@@ -153,4 +153,54 @@ button:hover {
         color 0.2s ease-in-out,
         border-color 0.2s ease-in-out,
         background-color 0.2s ease-in-out;
+}
+
+.container {
+    display: block;
+    cursor: pointer;
+    position: relative;
+    margin-left: -46px;
+    padding-left: 40px;
+    margin-bottom: 12px;
+}
+
+.container input {
+    width: 0;
+    cursor: pointer;
+    position: absolute;
+}
+
+.checkmark {
+    left: 0;
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    border-radius: 4px;
+    background-color: var(--white);
+    border: var(--border-width) var(--border-line) var(--grey);
+}
+
+.checkmark:after {
+    content: "";
+    display: none;
+    position: absolute;
+}
+
+.container .checkmark:after {
+    top: 3px;
+    left: 5px;
+    width: 3px;
+    height: 6px;
+    transform: rotate(45deg);
+    border: solid var(--grey);
+    border-width: 0 1px 1px 0;
+}
+
+.container:hover input~.checkmark {
+    color: var(--dark-grey);
+    border: var(--border-width) var(--border-line) var(--dark-grey);
+}
+
+.container input:checked~.checkmark:after {
+    display: block;
 }
