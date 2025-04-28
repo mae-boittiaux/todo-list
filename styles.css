@@ -140,8 +140,8 @@ button:hover {
     }
 
     .container .checkmark:after {
-        border: solid var(--grey);
-        border-width: 0 1px 1px 0;
+        border: solid var(--dark-grey);
+        border-width: 0 var(--border-width) var(--border-width) 0;
     }
 
     .checkmark {
@@ -203,8 +203,8 @@ button:hover {
     width: 3px;
     height: 6px;
     transform: rotate(45deg);
-    border: solid var(--white);
-    border-width: 0 1px 1px 0;
+    border: solid var(--dark-grey);
+    border-width: 0 var(--border-width) var(--border-width) 0;
 }
 
 .container input:checked~.checkmark:after {
