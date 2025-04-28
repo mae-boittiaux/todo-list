@@ -77,14 +77,23 @@ function updateTodoList() {
 }
 
 function addCheckbox(todo) {
+    const label = document.createElement('label');
+    label.className = 'container';
+
     const checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
-    checkbox.className = 'checkboxButton';
+    checkbox.checked = 'checked';
+
+    const span = document.createElement('span');
+    span.className = 'checkmark';
+
+    label.appendChild(checkbox);
+    label.appendChild(span);
 
     checkbox.onclick = () => {
         console.log(`[Application]: To-do '${todo.todo}' completed!`);
     };
-    return checkbox;
+    return label;
 }
 
 function addDeleteButton(todo) {
