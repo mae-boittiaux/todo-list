@@ -152,6 +152,8 @@ button:hover {
 .delete-button {
     padding: 0;
     border: none;
+    display: flex;
+    margin-left: auto;
     color: var(--white);
     padding-right: 14px;
     background-color: var(--white);
