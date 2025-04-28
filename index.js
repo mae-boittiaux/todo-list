@@ -82,7 +82,7 @@ function addCheckbox(todo) {
 
     const checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
-    checkbox.checked = 'checked';
+    checkbox.checked = false;
 
     const span = document.createElement('span');
     span.className = 'checkmark';
@@ -91,7 +91,9 @@ function addCheckbox(todo) {
     label.appendChild(span);
 
     checkbox.onclick = () => {
-        console.log(`[Application]: To-do '${todo.todo}' completed!`);
+        if (checkbox.checked == true) {
+            console.log(`[Application]: To-do '${todo.todo}' completed!`);
+        }
     };
     return label;
 }
