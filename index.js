@@ -132,3 +132,12 @@ if ('serviceWorker' in navigator) {
             console.log("[Service Worker]: Registration failed.");
         })
 }
+
+const themeButtons = document.querySelectorAll('.colour-theme-button');
+
+themeButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        document.querySelector('.selected-theme')?.classList.remove('selected-theme');
+        button.classList.add('selected-theme');
+    })
+});
