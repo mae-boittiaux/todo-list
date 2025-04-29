@@ -291,20 +291,26 @@ button:hover {
     border-color: var(--dark-green);
 }
 
-#button-0:hover {
+#button-0:hover,
+#button-0.selected-theme {
     background-color: var(--light-blue);
 }
 
-#button-1:hover {
+#button-1:hover,
+#button-1.selected-theme {
     background-color: var(--light-purple);
 }
 
-#button-2:hover {
+#button-2:hover,
+#button-2.selected-theme {
     background-color: var(--light-green);
 }
 
 #button-0:hover .horizontal-line,
 #button-1:hover .horizontal-line,
-#button-2:hover .horizontal-line {
+#button-2:hover .horizontal-line,
+#button-0.selected-theme .horizontal-line,
+#button-1.selected-theme .horizontal-line,
+#button-2.selected-theme .horizontal-line {
     background-color: var(--white);
 }
