@@ -141,3 +141,7 @@ themeButtons.forEach(button => {
         button.classList.add('selected-theme');
     })
 });
+
+function setTheme(buttonName) {
+    localStorage.selectedTheme = buttonName;
+}
