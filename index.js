@@ -57,6 +57,18 @@ function updateTodoList() {
             listItem.textContent = todo.todo;
             listItem.dataset.id = todo.id;
 
+            const addCSS = css => document.head.appendChild(document.createElement("style")).innerHTML = css;
+
+            if (localStorage.selectedTheme == 'button-0') {
+                addCSS("#todo-list li::before{ background-color: #d5e3f0; }");
+            }
+            if (localStorage.selectedTheme == 'button-1') {
+                addCSS("#todo-list li::before{ background-color: #e0d2ec; }");
+            }
+            if (localStorage.selectedTheme == 'button-2') {
+                addCSS("#todo-list li::before{ background-color: #d6ebc5; }");
+            }
+
             listItem.prepend(addCheckbox(todo));
             listItem.appendChild(addDeleteButton(todo));
             todoListElement.appendChild(listItem);
@@ -139,6 +151,7 @@ themeButtons.forEach(button => {
     button.addEventListener('click', () => {
         document.querySelector('.selected-theme')?.classList.remove('selected-theme');
         button.classList.add('selected-theme');
+        updateTodoList();
     })
 });
 
