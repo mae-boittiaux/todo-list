@@ -5,6 +5,8 @@ let database;
 
 const request = indexedDB.open(databaseName, 1);
 
+const isTodoChecked = [];
+
 request.onerror = () => {
     console.error("[IndexedDB]: Error opening connection to database.");
 };
@@ -57,6 +59,8 @@ function updateTodoList() {
             listItem.textContent = todo.todo;
             listItem.dataset.id = todo.id;
 
+            isTodoChecked[todo.id] = false;
+
             const addCSS = css => document.head.appendChild(document.createElement("style")).innerHTML = css;
 
             if (localStorage.selectedTheme == 'button-0') {
@@ -103,6 +107,7 @@ function addCheckbox(todo) {
     label.appendChild(span);
 
     checkbox.onclick = () => {
+        isTodoChecked[todo.id] = checkbox.checked;
         if (checkbox.checked == true) {
             console.log(`[Application]: To-do '${todo.todo}' completed!`);
         }
