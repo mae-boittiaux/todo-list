@@ -145,3 +145,14 @@ themeButtons.forEach(button => {
 function setTheme(buttonName) {
     localStorage.selectedTheme = buttonName;
 }
+
+document.querySelector('.selected-theme')?.classList.remove('selected-theme');
+if (localStorage.selectedTheme == 'button-0') {
+    document.getElementById('button-0').classList.add('selected-theme');
+}
+if (localStorage.selectedTheme == 'button-1') {
+    document.getElementById('button-1').classList.add('selected-theme');
+}
+if (localStorage.selectedTheme == 'button-2') {
+    document.getElementById('button-2').classList.add('selected-theme');
+}
