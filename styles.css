@@ -5,9 +5,14 @@
     --light-grey: #f0f0f0;
     --white: #fdfdfd;
 
-    --highlighter-yellow: #ffee8cc0;
-    --highlighter-pink: #fb8cffc0;
-    --highlighter-orange: #ffc08cc0;
+    --light-yellow: #f5e497;
+    --dark-yellow: #928135;
+
+    --light-pink: #eb8cd3;
+    --dark-pink: #7e2567;
+
+    --light-orange: #ecb97b;
+    --dark-orange: #855821;
 
     --light-blue: #d5e3f0;
     --dark-blue: #31597e;
@@ -18,7 +23,7 @@
     --light-green: #d6ebc5;
     --dark-green: #214107;
 
-    --red: #dd0534;
+    --light-red: #dd0534;
     --dark-red: #9b1818;
 
     /* font-sizes */
@@ -42,7 +47,7 @@
 
 ::selection {
     color: var(--dark-grey);
-    background-color: var(--highlighter-yellow);
+    background-color: var(--light-yellow);
 }
 
 body {
@@ -135,7 +140,7 @@ button:hover {
     content: '';
     position: absolute;
     width: var(--border-width);
-    background-color: var(--red);
+    background-color: var(--light-red);
 }
 
 #todo-list li:last-child {
@@ -243,8 +248,8 @@ button:hover {
 .highlighter-colour-button {
     width: 48px;
     height: 48px;
-    border: var(--border-width) var(--border-line) var(--grey);
     box-shadow: var(--box-shadow);
+    border: var(--border-width) var(--border-line) var(--grey);
     transition:
         color 0.2s ease-in-out,
         border-color 0.2s ease-in-out,
@@ -252,15 +257,18 @@ button:hover {
 }
 
 #highlighter-yellow {
-    background-color: var(--highlighter-yellow);
+    background-color: var(--light-yellow);
+    border: var(--border-width) var(--border-line) var(--dark-yellow);
 }
 
 #highlighter-pink {
-    background-color: var(--highlighter-pink);
+    background-color: var(--light-pink);
+    border: var(--border-width) var(--border-line) var(--dark-pink);
 }
 
 #highlighter-orange {
-    background-color: var(--highlighter-orange);
+    background-color: var(--light-orange);
+    border: var(--border-width) var(--border-line) var(--dark-orange);
 }
 
 #highlighter-yellow.selected-highlighter {
@@ -299,7 +307,7 @@ button:hover {
     z-index: 2;
     bottom: 0px;
     position: absolute;
-    background-color: var(--red);
+    background-color: var(--light-red);
 }
 
 .colour-theme-button .horizontal-lines {

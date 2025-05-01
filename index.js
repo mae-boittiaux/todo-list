@@ -74,13 +74,13 @@ function updateTodoList() {
             }
 
             if (localStorage.selectedHighlighterColour == 'highlighter-yellow') {
-                addCSS("::selection{ background-color: #ffee8cc0; }");
+                addCSS("::selection{ background-color: #f5e497; }");
             }
             if (localStorage.selectedHighlighterColour == 'highlighter-pink') {
-                addCSS("::selection{ background-color: #fb8cffc0; }");
+                addCSS("::selection{ background-color: #eb8cd3; }");
             }
             if (localStorage.selectedHighlighterColour == 'highlighter-orange') {
-                addCSS("::selection{ background-color: #ffc08cc0; }");
+                addCSS("::selection{ background-color: #ecb97b; }");
             }
 
             listItem.prepend(addCheckbox(todo));
