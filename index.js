@@ -73,6 +73,16 @@ function updateTodoList() {
                 addCSS("#todo-list li::before{ background-color: #d6ebc5; }");
             }
 
+            if (localStorage.selectedHighlighterColour == 'highlighter-yellow') {
+                addCSS("::selection{ background-color: #ffee8cc0; }");
+            }
+            if (localStorage.selectedHighlighterColour == 'highlighter-pink') {
+                addCSS("::selection{ background-color: #fb8cffc0; }");
+            }
+            if (localStorage.selectedHighlighterColour == 'highlighter-orange') {
+                addCSS("::selection{ background-color: #ffc08cc0; }");
+            }
+
             listItem.prepend(addCheckbox(todo));
             listItem.appendChild(addDeleteButton(todo));
             todoListElement.appendChild(listItem);
@@ -168,5 +178,26 @@ document.querySelector('.selected-theme')?.classList.remove('selected-theme');
 themeButtons.forEach(button => {
     if (localStorage.selectedTheme == button.id) {
         document.getElementById(button.id).classList.add('selected-theme');
+    }
+});
+
+const highlighterColour = document.querySelectorAll('.highlighter-colour-button');
+
+highlighterColour.forEach(highlighter => {
+    highlighter.addEventListener('click', () => {
+        document.querySelector('.selected-highlighter')?.classList.remove('selected-highlighter');
+        highlighter.classList.add('selected-highlighter');
+        updateTodoList();
+    })
+});
+
+function setHighlighterColour(buttonName) {
+    localStorage.selectedHighlighterColour = buttonName;
+}
+
+document.querySelector('.selected-highlighter')?.classList.remove('selected-highlighter');
+highlighterColour.forEach(highlighter => {
+    if (localStorage.selectedHighlighterColour == highlighter.id) {
+        document.getElementById(highlighter.id).classList.add('selected-highlighter');
     }
 });

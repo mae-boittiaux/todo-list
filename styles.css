@@ -5,7 +5,9 @@
     --light-grey: #f0f0f0;
     --white: #fdfdfd;
 
-    --highlight: #ffee8cc0;
+    --highlighter-yellow: #ffee8cc0;
+    --highlighter-pink: #fb8cffc0;
+    --highlighter-orange: #ffc08cc0;
 
     --light-blue: #d5e3f0;
     --dark-blue: #31597e;
@@ -40,7 +42,7 @@
 
 ::selection {
     color: var(--dark-grey);
-    background-color: var(--highlight);
+    background-color: var(--highlighter-yellow);
 }
 
 body {
@@ -229,8 +231,48 @@ button:hover {
     border-radius: var(--border-radius);
 }
 
-.colour-theme-button:nth-child(-n + 2) {
+#highlighter-colour-container {
+    top: 110px;
+}
+
+.colour-theme-button:nth-child(-n + 2),
+.highlighter-colour-button:nth-child(-n + 2) {
     margin-right: 20px;
+}
+
+.highlighter-colour-button {
+    width: 48px;
+    height: 48px;
+    border: var(--border-width) var(--border-line) var(--grey);
+    box-shadow: var(--box-shadow);
+    transition:
+        color 0.2s ease-in-out,
+        border-color 0.2s ease-in-out,
+        background-color 0.2s ease-in-out;
+}
+
+#highlighter-yellow {
+    background-color: var(--highlighter-yellow);
+}
+
+#highlighter-pink {
+    background-color: var(--highlighter-pink);
+}
+
+#highlighter-orange {
+    background-color: var(--highlighter-orange);
+}
+
+#highlighter-yellow.selected-highlighter {
+    border: var(--border-width) var(--border-line) var(--dark-grey);
+}
+
+#highlighter-pink.selected-highlighter {
+    border: var(--border-width) var(--border-line) var(--dark-grey);
+}
+
+#highlighter-orange.selected-highlighter {
+    border: var(--border-width) var(--border-line) var(--dark-grey);
 }
 
 .colour-theme-button {
