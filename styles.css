@@ -220,10 +220,17 @@ button:hover {
 }
 
 .button-group {
-    top: 4px;
-    right: 8px;
-    padding: 20px;
+    top: 30px;
+    right: 30px;
+    display: flex;
     position: absolute;
+    flex-direction: row;
+    justify-content: space-between;
+    border-radius: var(--border-radius);
+}
+
+.colour-theme-button:nth-child(-n + 2) {
+    margin-right: 20px;
 }
 
 .colour-theme-button {
@@ -233,7 +240,6 @@ button:hover {
     overflow: hidden;
     position: relative;
     align-items: center;
-    margin-bottom: 20px;
     justify-content: center;
     box-shadow: var(--box-shadow);
     background-color: var(--white);
