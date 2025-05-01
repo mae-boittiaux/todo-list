@@ -219,7 +219,7 @@ button:hover {
     display: block;
 }
 
-.button-group {
+.button-container {
     top: 30px;
     right: 30px;
     display: flex;
