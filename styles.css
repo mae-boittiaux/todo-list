@@ -240,7 +240,7 @@ button:hover {
     top: 110px;
 }
 
-.colour-theme-button:nth-child(-n + 2),
+.line-colour-button:nth-child(-n + 2),
 .highlighter-colour-button:nth-child(-n + 2) {
     margin-right: 20px;
 }
@@ -283,7 +283,7 @@ button:hover {
     border: var(--border-width) var(--border-line) var(--dark-grey);
 }
 
-.colour-theme-button {
+.line-colour-button {
     width: 48px;
     height: 48px;
     display: flex;
@@ -299,7 +299,7 @@ button:hover {
         background-color 0.2s ease-in-out;
 }
 
-.colour-theme-button::before {
+.line-colour-button::before {
     content: '';
     top: 0px;
     left: 22%;
@@ -310,7 +310,7 @@ button:hover {
     background-color: var(--light-red);
 }
 
-.colour-theme-button .horizontal-lines {
+.line-colour-button .horizontal-lines {
     width: 100%;
     height: 100%;
     display: flex;
@@ -323,50 +323,50 @@ button:hover {
     height: 1px;
 }
 
-#button-0 .horizontal-line {
+#line-blue .horizontal-line {
     background-color: var(--light-blue);
 }
 
-#button-1 .horizontal-line {
+#line-purple .horizontal-line {
     background-color: var(--light-purple);
 }
 
-#button-2 .horizontal-line {
+#line-green .horizontal-line {
     background-color: var(--light-green);
 }
 
-#button-0 {
+#line-blue {
     border-color: var(--dark-blue);
 }
 
-#button-1 {
+#line-purple {
     border-color: var(--dark-purple);
 }
 
-#button-2 {
+#line-green {
     border-color: var(--dark-green);
 }
 
-#button-0:hover,
-#button-0.selected-theme {
+#line-blue:hover,
+#line-blue.selected-theme {
     background-color: var(--light-blue);
 }
 
-#button-1:hover,
-#button-1.selected-theme {
+#line-purple:hover,
+#line-purple.selected-theme {
     background-color: var(--light-purple);
 }
 
-#button-2:hover,
-#button-2.selected-theme {
+#line-green:hover,
+#line-green.selected-theme {
     background-color: var(--light-green);
 }
 
-#button-0:hover .horizontal-line,
-#button-1:hover .horizontal-line,
-#button-2:hover .horizontal-line,
-#button-0.selected-theme .horizontal-line,
-#button-1.selected-theme .horizontal-line,
-#button-2.selected-theme .horizontal-line {
+#line-blue:hover .horizontal-line,
+#line-purple:hover .horizontal-line,
+#line-green:hover .horizontal-line,
+#line-blue.selected-theme .horizontal-line,
+#line-purple.selected-theme .horizontal-line,
+#line-green.selected-theme .horizontal-line {
     background-color: var(--white);
 }

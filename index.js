@@ -63,13 +63,13 @@ function updateTodoList() {
 
             const addCSS = css => document.head.appendChild(document.createElement("style")).innerHTML = css;
 
-            if (localStorage.selectedTheme == 'button-0') {
+            if (localStorage.selectedTheme == 'line-blue') {
                 addCSS("#todo-list li::before{ background-color: #d5e3f0; }");
             }
-            if (localStorage.selectedTheme == 'button-1') {
+            if (localStorage.selectedTheme == 'line-purple') {
                 addCSS("#todo-list li::before{ background-color: #e0d2ec; }");
             }
-            if (localStorage.selectedTheme == 'button-2') {
+            if (localStorage.selectedTheme == 'line-green') {
                 addCSS("#todo-list li::before{ background-color: #d6ebc5; }");
             }
 
@@ -160,7 +160,7 @@ if ('serviceWorker' in navigator) {
         })
 }
 
-const themeButtons = document.querySelectorAll('.colour-theme-button');
+const themeButtons = document.querySelectorAll('.line-colour-button');
 
 themeButtons.forEach(button => {
     button.addEventListener('click', () => {
