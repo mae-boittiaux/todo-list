@@ -1,3 +1,5 @@
+import { logMessage, MessageScope } from './log-message.js';
+
 const cacheName = 'todo-list-cache';
 
 const urlsToCache = [
@@ -9,15 +11,15 @@ const urlsToCache = [
 ];
 
 self.addEventListener('install', event => {
-    console.log("[Service Worker]: Installing service worker...");
+    logMessage(MessageScope.SERVICE_WORKER, "Installing service worker..");
     event.waitUntil(
         (async () => {
             const cache = await caches.open(cacheName);
             try {
                 await cache.addAll(urlsToCache);
-                console.log("[Service Worker]: Resources cached successfully.");
+                logMessage(MessageScope.SERVICE_WORKER, "Resources cached successfully");
             } catch (error) {
-                console.log("[Service Worker]: Failed to cache resources.");
+                logMessage(MessageScope.SERVICE_WORKER, "Failed to cache resources");
             }
             await self.skipWaiting();
         })()
@@ -37,7 +39,7 @@ self.addEventListener('fetch', event => {
                     return networkResponse;
                 })
                 .catch(error => {
-                    console.log("[Service Worker]: Network request failed.");
+                    logMessage(MessageScope.SERVICE_WORKER, "Network request failed");
                 });
             return cachedResponse || networkPromise;
         })()
@@ -45,14 +47,14 @@ self.addEventListener('fetch', event => {
 });
 
 self.addEventListener('activate', event => {
-    console.log("[Service Worker]: Activating service worker...");
+    logMessage(MessageScope.SERVICE_WORKER, "Activating service worker..");
     event.waitUntil(
         (async () => {
             const cacheNames = await caches.keys();
             await Promise.all(
                 cacheNames.map(cache => {
                     if (cache !== cacheName) {
-                        console.log("[Service Worker]: Deleting old cache.");
+                        logMessage(MessageScope.SERVICE_WORKER, "Deleting old cache");
                         return caches.delete(cache);
                     }
                 })

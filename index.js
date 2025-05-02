@@ -1,3 +1,5 @@
+import { logMessage, MessageScope } from './log-message.js';
+
 const databaseName = "todo-database";
 const objectStoreName = "todo-store";
 
@@ -8,10 +10,10 @@ const request = indexedDB.open(databaseName, 1);
 const isTodoChecked = [];
 
 request.onerror = () => {
-    console.error("[IndexedDB]: Error opening connection to database.");
+    logMessage(MessageScope.INDEXEDDB, "Error opening connection to database");
 };
 request.onsuccess = (event) => {
-    console.log("[IndexedDB]: Database connection opened successfully.");
+    logMessage(MessageScope.INDEXEDDB, "Database connection opened successfully");
     database = event.target.result;
     updateTodoList();
 };
@@ -33,12 +35,12 @@ document.getElementById('todo-form').onsubmit = (event) => {
     const request = objectStore.add(newTodo);
 
     request.onsuccess = () => {
-        console.log(`[IndexedDB]: To-do '${newTodo.todo}' added successfully to database.`);
+        logMessage(MessageScope.INDEXEDDB, `To-do '${newTodo.todo}' added successfully to database`);
         todoInput.value = '';
         updateTodoList();
     };
     request.onerror = () => {
-        console.error("[IndexedDB]: Error adding item to database.");
+        logMessage(MessageScope.INDEXEDDB, "Error adding item to database");
     };
 };
 
@@ -95,10 +97,10 @@ function updateTodoList() {
             footerPadding.dataset.id = "";
             todoListElement.appendChild(footerPadding);
         }
-        console.log("[IndexedDB]: To-do list updated successfully.");
+        logMessage(MessageScope.INDEXEDDB, "To-do list updated successfully");
     };
     request.onerror = () => {
-        console.error("[IndexedDB]: Error updating the to-do list.");
+        logMessage(MessageScope.INDEXEDDB, "Error updating the to-do list");
     };
 }
 
@@ -119,7 +121,7 @@ function addCheckbox(todo) {
     checkbox.onclick = () => {
         isTodoChecked[todo.id] = checkbox.checked;
         if (checkbox.checked == true) {
-            console.log(`[Application]: To-do '${todo.todo}' completed!`);
+            logMessage(MessageScope.APPLICATION, `To-do '${todo.todo}' completed`);
         }
     };
     return label;
@@ -131,7 +133,7 @@ function addDeleteButton(todo) {
     deleteButton.className = 'delete-button';
 
     deleteButton.onclick = () => {
-        console.log(`[IndexedDB]: To-do '${todo.todo}' successfully deleted.`);
+        logMessage(MessageScope.INDEXEDDB, `To-do '${todo.todo}' successfully deleted`);
         deleteTodo(todo.id);
     };
     return deleteButton;
@@ -146,17 +148,17 @@ function deleteTodo(id) {
         updateTodoList();
     };
     request.onerror = () => {
-        console.error('[IndexedDB]: Error deleting to-do item.');
+        logMessage(MessageScope.INDEXEDDB, "Error deleting to-do item");
     };
 }
 
 if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('./service-worker.js')
+    navigator.serviceWorker.register('./service-worker.js', { type: 'module' })
         .then(function () {
-            console.log("[Service Worker]: Registered successfully.");
+            logMessage(MessageScope.SERVICE_WORKER, "Registered successfully");
         })
         .catch(function () {
-            console.log("[Service Worker]: Registration failed.");
+            logMessage(MessageScope.SERVICE_WORKER, "Registration failed");
         })
 }
 
