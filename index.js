@@ -109,6 +109,7 @@ function addCheckbox(todo) {
     label.className = 'container';
 
     const checkbox = document.createElement('input');
+    checkbox.name = 'todo-checkbox';
     checkbox.type = 'checkbox';
     checkbox.checked = false;
 
