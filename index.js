@@ -172,9 +172,17 @@ themeButtons.forEach(button => {
     })
 });
 
-function setTheme(buttonName) {
-    localStorage.selectedTheme = buttonName;
-}
+document.getElementById('line-blue').onclick = () => {
+    localStorage.selectedTheme = 'line-blue';
+};
+
+document.getElementById('line-purple').onclick = () => {
+    localStorage.selectedTheme = 'line-purple';
+};
+
+document.getElementById('line-green').onclick = () => {
+    localStorage.selectedTheme = 'line-green';
+};
 
 document.querySelector('.selected-theme')?.classList.remove('selected-theme');
 themeButtons.forEach(button => {
@@ -193,9 +201,17 @@ highlighterColour.forEach(highlighter => {
     })
 });
 
-function setHighlighterColour(buttonName) {
-    localStorage.selectedHighlighterColour = buttonName;
-}
+document.getElementById('highlighter-yellow').onclick = () => {
+    localStorage.selectedHighlighterColour = 'highlighter-yellow';
+};
+
+document.getElementById('highlighter-pink').onclick = () => {
+    localStorage.selectedHighlighterColour = 'highlighter-pink';
+};
+
+document.getElementById('highlighter-orange').onclick = () => {
+    localStorage.selectedHighlighterColour = 'highlighter-orange';
+};
 
 document.querySelector('.selected-highlighter')?.classList.remove('selected-highlighter');
 highlighterColour.forEach(highlighter => {
