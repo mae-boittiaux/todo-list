@@ -192,8 +192,7 @@ button:hover {
     border-radius: var(--border-radius);
 }
 
-.line-colour-button:nth-child(-n + 2),
-.highlighter-colour-button:nth-child(-n + 2) {
+.line-colour-button:nth-child(-n + 2) {
     margin-right: 20px;
 }
 

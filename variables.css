@@ -34,6 +34,7 @@
     --border-width: 1px;
     --border-line: solid;
     --border-radius: 20px;
+    --border-radius-small: 4px;
 
     /* padding */
     --padding: 8px 14px;
