@@ -1,4 +1,5 @@
 @import "variables.css";
+@import "highlighter-buttons.css";
 
 ::selection {
     color: var(--dark-grey);
@@ -191,51 +192,9 @@ button:hover {
     border-radius: var(--border-radius);
 }
 
-#highlighter-colour-container {
-    top: 110px;
-}
-
 .line-colour-button:nth-child(-n + 2),
 .highlighter-colour-button:nth-child(-n + 2) {
     margin-right: 20px;
-}
-
-.highlighter-colour-button {
-    width: 48px;
-    height: 48px;
-    box-shadow: var(--box-shadow);
-    border: var(--border-width) var(--border-line) var(--grey);
-    transition:
-        color 0.2s ease-in-out,
-        border-color 0.2s ease-in-out,
-        background-color 0.2s ease-in-out;
-}
-
-#highlighter-yellow {
-    background-color: var(--light-yellow);
-    border: var(--border-width) var(--border-line) var(--dark-yellow);
-}
-
-#highlighter-pink {
-    background-color: var(--light-pink);
-    border: var(--border-width) var(--border-line) var(--dark-pink);
-}
-
-#highlighter-orange {
-    background-color: var(--light-orange);
-    border: var(--border-width) var(--border-line) var(--dark-orange);
-}
-
-#highlighter-yellow.selected-highlighter {
-    border: var(--border-width) var(--border-line) var(--dark-grey);
-}
-
-#highlighter-pink.selected-highlighter {
-    border: var(--border-width) var(--border-line) var(--dark-grey);
-}
-
-#highlighter-orange.selected-highlighter {
-    border: var(--border-width) var(--border-line) var(--dark-grey);
 }
 
 .line-colour-button {
