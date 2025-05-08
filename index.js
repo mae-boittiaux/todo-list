@@ -10,6 +10,8 @@ const request = indexedDB.open(databaseName, 1);
 
 const isTodoChecked = [];
 
+const addCSS = css => document.head.appendChild(document.createElement("style")).innerHTML = css;
+
 setEventListeners();
 
 request.onerror = () => {
@@ -66,33 +68,8 @@ export function updateTodoList() {
 
             isTodoChecked[todo.id] = false;
 
-            const addCSS = css => document.head.appendChild(document.createElement("style")).innerHTML = css;
-
-            if (localStorage.selectedTheme == 'line-blue') {
-                addCSS("#todo-list li::before{ background-color: #d5e3f0; }");
-            }
-            if (localStorage.selectedTheme == 'line-purple') {
-                addCSS("#todo-list li::before{ background-color: #e0d2ec; }");
-            }
-            if (localStorage.selectedTheme == 'line-green') {
-                addCSS("#todo-list li::before{ background-color: #d6ebc5; }");
-            }
-
-            if (localStorage.selectedHighlighterColour == 'highlighter-yellow') {
-                addCSS("::selection{ background-color: #f5e497; }");
-            }
-            if (localStorage.selectedHighlighterColour == 'highlighter-pink') {
-                addCSS("::selection{ background-color: #eb8cd3; }");
-            }
-            if (localStorage.selectedHighlighterColour == 'highlighter-orange') {
-                addCSS("::selection{ background-color: #ecb97b; }");
-            }
-            if (localStorage.selectedHighlighterColour == 'highlighter-green') {
-                addCSS("::selection{ background-color: #d6ebc5; }");
-            }
-            if (localStorage.selectedHighlighterColour == 'highlighter-blue') {
-                addCSS("::selection{ background-color: #d5e3f0; }");
-            }
+            applyLineColour();
+            applyHighlighterColour();
 
             listItem.prepend(addCheckbox(todo));
             listItem.appendChild(addDeleteButton(todo));
@@ -111,6 +88,36 @@ export function updateTodoList() {
     request.onerror = () => {
         logMessage(MessageScope.INDEXEDDB, "Error updating the to-do list");
     };
+}
+
+function applyLineColour() {
+    if (localStorage.selectedTheme == 'line-blue') {
+        addCSS("#todo-list li::before{ background-color: #d5e3f0; }");
+    }
+    if (localStorage.selectedTheme == 'line-purple') {
+        addCSS("#todo-list li::before{ background-color: #e0d2ec; }");
+    }
+    if (localStorage.selectedTheme == 'line-green') {
+        addCSS("#todo-list li::before{ background-color: #d6ebc5; }");
+    }
+}
+
+function applyHighlighterColour() {
+    if (localStorage.selectedHighlighterColour == 'highlighter-yellow') {
+        addCSS("::selection{ background-color: #f5e497; }");
+    }
+    if (localStorage.selectedHighlighterColour == 'highlighter-pink') {
+        addCSS("::selection{ background-color: #eb8cd3; }");
+    }
+    if (localStorage.selectedHighlighterColour == 'highlighter-orange') {
+        addCSS("::selection{ background-color: #ecb97b; }");
+    }
+    if (localStorage.selectedHighlighterColour == 'highlighter-green') {
+        addCSS("::selection{ background-color: #d6ebc5; }");
+    }
+    if (localStorage.selectedHighlighterColour == 'highlighter-blue') {
+        addCSS("::selection{ background-color: #d5e3f0; }");
+    }
 }
 
 function addCheckbox(todo) {
