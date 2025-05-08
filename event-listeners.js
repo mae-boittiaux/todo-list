@@ -52,6 +52,14 @@ export function setEventListeners() {
         localStorage.selectedHighlighterColour = 'highlighter-orange';
     };
 
+    document.getElementById('highlighter-green').onclick = () => {
+        localStorage.selectedHighlighterColour = 'highlighter-green';
+    };
+
+    document.getElementById('highlighter-blue').onclick = () => {
+        localStorage.selectedHighlighterColour = 'highlighter-blue';
+    };
+
     document.querySelector('.selected-highlighter')?.classList.remove('selected-highlighter');
     highlighterColour.forEach(highlighter => {
         if (localStorage.selectedHighlighterColour == highlighter.id) {

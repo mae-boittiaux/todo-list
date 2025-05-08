@@ -87,6 +87,12 @@ export function updateTodoList() {
             if (localStorage.selectedHighlighterColour == 'highlighter-orange') {
                 addCSS("::selection{ background-color: #ecb97b; }");
             }
+            if (localStorage.selectedHighlighterColour == 'highlighter-green') {
+                addCSS("::selection{ background-color: #d6ebc5; }");
+            }
+            if (localStorage.selectedHighlighterColour == 'highlighter-blue') {
+                addCSS("::selection{ background-color: #d5e3f0; }");
+            }
 
             listItem.prepend(addCheckbox(todo));
             listItem.appendChild(addDeleteButton(todo));
