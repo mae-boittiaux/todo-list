@@ -186,7 +186,7 @@ button:hover {
     top: 30px;
     right: 30px;
     display: flex;
-    position: absolute;
+    position: fixed;
     flex-direction: row;
     justify-content: space-between;
     border-radius: var(--border-radius);
