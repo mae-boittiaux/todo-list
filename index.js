@@ -107,16 +107,16 @@ function applyHighlighterColour() {
         addCSS("::selection{ background-color: #f5e497; }");
     }
     if (localStorage.selectedHighlighterColour == 'highlighter-pink') {
-        addCSS("::selection{ background-color: #eb8cd3; }");
+        addCSS("::selection{ background-color: #e7aed9; }");
     }
     if (localStorage.selectedHighlighterColour == 'highlighter-orange') {
-        addCSS("::selection{ background-color: #ecb97b; }");
+        addCSS("::selection{ background-color: #ebc597; }");
     }
     if (localStorage.selectedHighlighterColour == 'highlighter-green') {
-        addCSS("::selection{ background-color: #d6ebc5; }");
+        addCSS("::selection{ background-color: #d1ecba; }");
     }
     if (localStorage.selectedHighlighterColour == 'highlighter-blue') {
-        addCSS("::selection{ background-color: #d5e3f0; }");
+        addCSS("::selection{ background-color: #c7dcf0; }");
     }
 }
 
