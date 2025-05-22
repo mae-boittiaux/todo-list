@@ -20,6 +20,7 @@ request.onerror = () => {
 request.onsuccess = (event) => {
     logMessage(MessageScope.INDEXEDDB, "Database connection opened successfully");
     database = event.target.result;
+    checkDatabaseCount();
     updateTodoList();
 };
 
@@ -177,4 +178,32 @@ if ('serviceWorker' in navigator) {
         .catch(function () {
             logMessage(MessageScope.SERVICE_WORKER, "Registration failed");
         })
+}
+
+function checkDatabaseCount() {
+    const transaction = database.transaction([objectStoreName], 'readonly');
+    const objectStore = transaction.objectStore(objectStoreName);
+
+    const countRequest = objectStore.count();
+    countRequest.onsuccess = () => {
+        console.log(countRequest.result);
+        if (countRequest.result == 0) {
+            addIntroductionData();
+        }
+    };
+}
+
+function addIntroductionData() {
+    const customerData = [
+        { id: 1, todo: "How to use:" },
+        { id: 2, todo: "1. Enter a to-do! (this will auto-clear)." },
+        { id: 3, todo: "2. Change the line colour!" },
+        { id: 4, todo: "3. Change the highlighter colour!" },
+        { id: 5, todo: "4. Refresh the page and it will all persist!" },
+    ];
+
+    const customerObjectStore = database.transaction([objectStoreName], 'readwrite').objectStore(objectStoreName);
+    customerData.forEach((customer) => {
+        customerObjectStore.add(customer);
+    });
 }
