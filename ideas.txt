@@ -1,0 +1,16 @@
+Ideas: 
+- persist checkmarks
+- warning for incognito mode
+- check browser compatibility 
+- bullet point options
+- ability to swap items
+- fill in README file
+- cross out to-do when checked
+- paper colour options 
+- bin icons instead of 'Delete'
+- clear all button 
+- rounded highlighter
+- persistent highlighting
+- multiple highlighter colours at once
+- paper resize abilities 
+- multiple 'sheets' of paper
