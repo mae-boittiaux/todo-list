@@ -1,0 +1,32 @@
+@import "variables.css";
+
+#bullet-point-container {
+    top: 100px;
+}
+
+.bullet-point-button {
+    width: 48px;
+    height: 48px;
+    color: var(--grey);
+    box-shadow: var(--box-shadow);
+    background-color: var(--white);
+    transition:
+        color 0.2s ease-in-out,
+        border-color 0.2s ease-in-out,
+        background-color 0.2s ease-in-out;
+    border: var(--grey) var(--border-width) var(--border-line);
+}
+
+.bullet-point-button:nth-child(-n + 3) {
+    margin-right: 20px;
+}
+
+.bullet-point-button:hover {
+    color: var(--dark-grey);
+    border: var(--dark-grey) var(--border-width) var(--border-line);
+}
+
+.bullet-point-button.selected-bullet {
+    color: var(--dark-grey);
+    border: var(--dark-grey) var(--border-width) var(--border-line);
+}

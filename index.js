@@ -71,6 +71,7 @@ export function updateTodoList() {
 
             applyLineColour();
             applyHighlighterColour();
+            applyBulletPoint(listItem);
 
             listItem.prepend(addCheckbox(todo));
             listItem.appendChild(addDeleteButton(todo));
@@ -89,6 +90,21 @@ export function updateTodoList() {
     request.onerror = () => {
         logMessage(MessageScope.INDEXEDDB, "Error updating the to-do list");
     };
+}
+
+function applyBulletPoint(listItem) {
+    if (localStorage.selectedBullet == 'bullet-none') {
+        listItem.prepend("");
+    }
+    if (localStorage.selectedBullet == 'bullet-point') {
+        listItem.prepend("• ");
+    }
+    if (localStorage.selectedBullet == 'bullet-dash') {
+        listItem.prepend("- ");
+    }
+    if (localStorage.selectedBullet == 'bullet-arrow') {
+        listItem.prepend("→ ");
+    }
 }
 
 function applyLineColour() {
@@ -186,7 +202,6 @@ function checkDatabaseCount() {
 
     const countRequest = objectStore.count();
     countRequest.onsuccess = () => {
-        console.log(countRequest.result);
         if (countRequest.result == 0) {
             addIntroductionData();
         }
@@ -206,4 +221,5 @@ function addIntroductionData() {
     customerData.forEach((customer) => {
         customerObjectStore.add(customer);
     });
+    updateTodoList();
 }

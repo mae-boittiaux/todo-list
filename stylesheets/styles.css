@@ -1,4 +1,5 @@
 @import "variables.css";
+@import "bullet-points.css";
 @import "highlighter-buttons.css";
 
 ::selection {
