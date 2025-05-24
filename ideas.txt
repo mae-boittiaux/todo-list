@@ -1,8 +1,6 @@
 Ideas: 
-- persist checkmarks
 - warning for incognito mode
 - check browser compatibility 
-- bullet point options
 - ability to swap items
 - fill in README file
 - cross out to-do when checked
