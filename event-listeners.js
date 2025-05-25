@@ -23,6 +23,10 @@ export function setEventListeners() {
         localStorage.selectedTheme = 'line-green';
     };
 
+    document.getElementById('line-pink').onclick = () => {
+        localStorage.selectedTheme = 'line-pink';
+    };
+
     document.querySelector('.selected-theme')?.classList.remove('selected-theme');
     themeButtons.forEach(button => {
         if (localStorage.selectedTheme == button.id) {

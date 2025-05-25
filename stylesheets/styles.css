@@ -193,7 +193,7 @@ button:hover {
     border-radius: var(--border-radius);
 }
 
-.line-colour-button:nth-child(-n + 2) {
+.line-colour-button:nth-child(-n + 3) {
     margin-right: 20px;
 }
 
@@ -249,6 +249,10 @@ button:hover {
     background-color: var(--light-green);
 }
 
+#line-pink .horizontal-line {
+    background-color: var(--light-pink);
+}
+
 #line-blue {
     border-color: var(--dark-blue);
 }
@@ -259,6 +263,10 @@ button:hover {
 
 #line-green {
     border-color: var(--dark-green);
+}
+
+#line-pink {
+    border-color: var(--dark-pink);
 }
 
 #line-blue:hover,
@@ -276,11 +284,18 @@ button:hover {
     background-color: var(--light-green);
 }
 
+#line-pink:hover,
+#line-pink.selected-theme {
+    background-color: var(--light-pink);
+}
+
 #line-blue:hover .horizontal-line,
 #line-purple:hover .horizontal-line,
 #line-green:hover .horizontal-line,
+#line-pink:hover .horizontal-line,
 #line-blue.selected-theme .horizontal-line,
 #line-purple.selected-theme .horizontal-line,
-#line-green.selected-theme .horizontal-line {
+#line-green.selected-theme .horizontal-line,
+#line-pink.selected-theme .horizontal-line {
     background-color: var(--white);
 }

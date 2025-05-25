@@ -115,6 +115,9 @@ function applyLineColour() {
     if (localStorage.selectedTheme == 'line-green') {
         addCSS("#todo-list li::before{ background-color: #d6ebc5; }");
     }
+    if (localStorage.selectedTheme == 'line-pink') {
+        addCSS("#todo-list li::before{ background-color: #eccae4; }");
+    }
 }
 
 function applyHighlighterColour() {
@@ -122,7 +125,7 @@ function applyHighlighterColour() {
         addCSS("::selection{ background-color: #f5e497; }");
     }
     if (localStorage.selectedHighlighterColour == 'highlighter-pink') {
-        addCSS("::selection{ background-color: #e7aed9; }");
+        addCSS("::selection{ background-color: #eccae4; }");
     }
     if (localStorage.selectedHighlighterColour == 'highlighter-orange') {
         addCSS("::selection{ background-color: #ebc597; }");
