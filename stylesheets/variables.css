@@ -1,5 +1,7 @@
 :root {
     /* colours */
+    --transparent: #00000000;
+
     --dark-grey: #333;
     --grey: #a0a0a0;
     --light-grey: #f0f0f0;

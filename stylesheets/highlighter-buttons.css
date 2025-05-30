@@ -14,15 +14,8 @@
 
 .highlighter-colour-button,
 .highlighter-colour-button:hover {
-    border: var(--border-width) var(--border-line) var(--light-grey);
-}
-
-#highlighter-pink.selected-highlighter,
-#highlighter-blue.selected-highlighter,
-#highlighter-green.selected-highlighter,
-#highlighter-yellow.selected-highlighter,
-#highlighter-orange.selected-highlighter {
-    border: var(--border-width) var(--border-line) var(--light-grey);
+    background-color: var(--transparent);
+    border: var(--border-width) var(--border-line) var(--transparent);
 }
 
 .highlighter {
@@ -132,4 +125,30 @@
     border-right: var(--border-width) var(--border-line) var(--grey);
     border-bottom: var(--border-width) var(--border-line) var(--grey);
     border-radius: 0 0 var(--border-radius-small) var(--border-radius-small);
+}
+
+.selected-highlighter.highlighter-colour-button {
+    margin-top: -88px;
+}
+
+.selected-highlighter {
+    .lid-holder {
+        box-shadow: none;
+    }
+
+    .clip-top {
+        border-radius: 0;
+    }
+
+    .lid {
+        box-shadow: none;
+        margin-top: -154px;
+        border-bottom: none;
+        border-top: var(--border-width) var(--border-line) var(--grey);
+        border-radius: var(--border-radius-small) var(--border-radius-small) 0 0;
+    }
+
+    .highlighter {
+        border-radius: 0 0 var(--border-radius-small) var(--border-radius-small);
+    }
 }
