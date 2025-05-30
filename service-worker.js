@@ -6,8 +6,15 @@ const urlsToCache = [
     './',
     './index.js',
     './index.html',
-    './styles.css',
-    './favicon.ico'
+    './favicon.ico',
+    './log-message.js',
+    './service-worker.js',
+    './event-listeners.js',
+    './stylesheets/styles.css',
+    './stylesheets/variables.css',
+    './stylesheets/line-colours.css',
+    './stylesheets/bullet-points.css',
+    './stylesheets/highlighter-buttons.css'
 ];
 
 self.addEventListener('install', event => {
