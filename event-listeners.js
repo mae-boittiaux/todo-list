@@ -97,6 +97,10 @@ export function setEventListeners() {
         localStorage.selectedHighlighterColour = 'highlighter-blue';
     };
 
+    document.getElementById('highlighter-purple').onclick = () => {
+        localStorage.selectedHighlighterColour = 'highlighter-purple';
+    };
+
     document.querySelector('.selected-highlighter')?.classList.remove('selected-highlighter');
     highlighterColour.forEach(highlighter => {
         if (localStorage.selectedHighlighterColour == highlighter.id) {

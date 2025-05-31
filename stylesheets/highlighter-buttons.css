@@ -4,11 +4,11 @@
     top: 168px;
 }
 
-.highlighter-colour-button:nth-child(n + 5) {
-    margin-right: -10px;
+.highlighter-colour-button:nth-child(n + 6) {
+    margin-right: -12px;
 }
 
-.highlighter-colour-button:nth-child(-n + 4) {
+.highlighter-colour-button:nth-child(-n + 5) {
     margin-right: -4px;
 }
 
@@ -47,6 +47,11 @@
 #highlighter-blue .highlighter {
     background-color: var(--light-blue);
     border: var(--border-width) var(--border-line) var(--dark-blue);
+}
+
+#highlighter-purple .highlighter {
+    background-color: var(--light-purple);
+    border: var(--border-width) var(--border-line) var(--dark-purple);
 }
 
 .lid {
@@ -101,6 +106,13 @@
     border-top: var(--border-width) var(--border-line) var(--dark-blue);
     border-left: var(--border-width) var(--border-line) var(--dark-blue);
     border-right: var(--border-width) var(--border-line) var(--dark-blue);
+}
+
+#highlighter-purple .lid-holder {
+    background-color: var(--light-purple);
+    border-top: var(--border-width) var(--border-line) var(--dark-purple);
+    border-left: var(--border-width) var(--border-line) var(--dark-purple);
+    border-right: var(--border-width) var(--border-line) var(--dark-purple);
 }
 
 .clip-top {

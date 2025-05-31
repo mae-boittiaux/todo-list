@@ -136,6 +136,9 @@ function applyHighlighterColour() {
     if (localStorage.selectedHighlighterColour == 'highlighter-blue') {
         addCSS("::selection{ background-color: #c7dcf0; }");
     }
+    if (localStorage.selectedHighlighterColour == 'highlighter-purple') {
+        addCSS("::selection{ background-color: #e0d2ec; }");
+    }
 }
 
 function addCheckbox(todo) {
