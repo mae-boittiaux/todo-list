@@ -243,3 +243,16 @@ function addIntroductionData() {
     });
     updateTodoList();
 }
+
+document.getElementById('clear-all').onclick = () => {
+    const transaction = database.transaction([objectStoreName], 'readwrite');
+    const objectStore = transaction.objectStore(objectStoreName);
+    const request = objectStore.clear();
+
+    request.onsuccess = () => {
+        updateTodoList();
+    };
+    request.onerror = () => {
+        logMessage(MessageScope.INDEXEDDB, "Error clearing object store");
+    };
+};
