@@ -203,3 +203,8 @@ button:hover {
     position: absolute;
     font-size: var(--font-normal);
 }
+
+#utilities-container {
+    top: 610px;
+    width: 254px;
+}
