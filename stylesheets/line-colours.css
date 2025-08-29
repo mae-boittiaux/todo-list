@@ -1,6 +1,6 @@
 @import "variables.css";
 
-.line-colour-button:nth-child(-n + 3) {
+.line-colour-button:nth-child(-n + 4) {
     margin-right: 20px;
 }
 

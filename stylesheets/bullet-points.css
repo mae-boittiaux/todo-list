@@ -1,7 +1,7 @@
 @import "variables.css";
 
 #bullet-point-container {
-    top: 140px;
+    top: 180px;
 }
 
 .bullet-point-button {
@@ -17,7 +17,7 @@
     border: var(--grey) var(--border-width) var(--border-line);
 }
 
-.bullet-point-button:nth-child(-n + 3) {
+.bullet-point-button:nth-child(-n + 4) {
     margin-right: 20px;
 }
 

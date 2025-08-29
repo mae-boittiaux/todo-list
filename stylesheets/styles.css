@@ -190,9 +190,16 @@ button:hover {
     padding: 20px;
     display: flex;
     position: fixed;
+    padding-top: 54px;
     flex-direction: row;
     background-color: #0000000b;
     justify-content: space-between;
     border-radius: var(--border-radius);
     border: var(--border-width) var(--border-line) var(--grey);
+}
+
+.button-container-title {
+    top: 2px;
+    position: absolute;
+    font-size: var(--font-normal);
 }

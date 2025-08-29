@@ -1,14 +1,14 @@
 @import "variables.css";
 
 #highlighter-colour-container {
-    top: 250px;
+    top: 330px;
 }
 
-.highlighter-colour-button:nth-child(n + 6) {
+.highlighter-colour-button:nth-child(n + 7) {
     margin-right: -12px;
 }
 
-.highlighter-colour-button:nth-child(-n + 5) {
+.highlighter-colour-button:nth-child(-n + 6) {
     margin-right: -4px;
 }
 
