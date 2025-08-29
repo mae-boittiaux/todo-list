@@ -6,7 +6,6 @@ Ideas:
 - cross out to-do when checked
 - paper colour options 
 - bin icons instead of 'Delete'
-- clear all button 
 - rounded highlighter
 - persistent highlighting
 - multiple highlighter colours at once
