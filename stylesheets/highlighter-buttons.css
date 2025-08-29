@@ -1,7 +1,7 @@
 @import "variables.css";
 
 #highlighter-colour-container {
-    top: 168px;
+    top: 250px;
 }
 
 .highlighter-colour-button:nth-child(n + 6) {

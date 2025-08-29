@@ -187,9 +187,12 @@ button:hover {
 .button-container {
     top: 30px;
     right: 30px;
+    padding: 20px;
     display: flex;
     position: fixed;
     flex-direction: row;
+    background-color: #0000000b;
     justify-content: space-between;
     border-radius: var(--border-radius);
+    border: var(--border-width) var(--border-line) var(--grey);
 }
