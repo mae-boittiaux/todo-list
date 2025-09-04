@@ -4,14 +4,14 @@ const cacheName = 'todo-list-cache';
 
 const urlsToCache = [
     './',
-    './index.js',
     './index.html',
     './favicon.ico',
-    './log-message.js',
-    './service-worker.js',
-    './event-listeners.js',
+    './scripts/index.js',
+    './scripts/log-message.js',
     './stylesheets/styles.css',
+    './scripts/service-worker.js',
     './stylesheets/variables.css',
+    './scripts/event-listeners.js',
     './stylesheets/line-colours.css',
     './stylesheets/bullet-points.css',
     './stylesheets/highlighter-buttons.css'
