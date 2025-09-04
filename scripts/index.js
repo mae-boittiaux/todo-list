@@ -231,10 +231,10 @@ function checkDatabaseCount() {
 function addIntroductionData() {
     const customerData = [
         { id: 1, todo: "How to use:", checked: false },
-        { id: 2, todo: "1. Enter a to-do! (this will auto-clear).", checked: false },
-        { id: 3, todo: "2. Change the line colour!", checked: false },
-        { id: 4, todo: "3. Change the highlighter colour!", checked: false },
-        { id: 5, todo: "4. Refresh the page and it will all persist!", checked: false },
+        { id: 2, todo: "1. Enter a to-do (this will auto-clear)", checked: false },
+        { id: 3, todo: "2. Change the line-colour !", checked: false },
+        { id: 4, todo: "3. Change the highlighter-colour !", checked: false },
+        { id: 5, todo: "4. Refresh the page, it will all persist !", checked: false },
     ];
 
     const customerObjectStore = database.transaction([objectStoreName], 'readwrite').objectStore(objectStoreName);
